@@ -16,3 +16,25 @@
   --primary-color: #16113a; 
   --background-color: rgba(247,248,249,255); 
 }
+::-webkit-scrollbar {
+  width: 10px;
+} 
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey; 
+  border-radius: 3px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg,  #FE6B8B 30%, #FF8E53 90%); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg,  #FE6B8B 30%, #FF8E53 90%); 
+  border-radius: 10px;
+  cursor: pointer;
+} 

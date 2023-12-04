@@ -1,17 +1,18 @@
-import { FaChartPie } from "react-icons/fa";
-import { FaRegUser } from "react-icons/fa";
+import { GrUserAdmin } from "react-icons/gr";
+import { HiViewGridAdd } from "react-icons/hi";
+
 
 export const SlideBarData = [
     {
       key: 1,
       route: '/',
-      text: 'Overview',
-      icon: FaChartPie,
+      text: 'Dashboard',
+      icon: HiViewGridAdd,
     },
     {
       key: 2,
       route: "/validator",
       text: "Validators",
-      icon: FaRegUser,
+      icon: GrUserAdmin,
     }
 ]

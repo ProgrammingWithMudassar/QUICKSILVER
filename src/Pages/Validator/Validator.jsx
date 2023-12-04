@@ -74,17 +74,17 @@ const Validator = () => {
           </Box>
         </Box>
 
-        <Box sx={{ mt: 3, height:"calc(100vh - 260px)" , background:'red',p:2, overflowY:'scroll' }}>
+        <Box sx={{ mt: 3, height:"calc(100vh - 260px)" ,px:1, overflowY:'scroll' }}>
           <TableContainer component={Paper}>
             <Table >
-              <TableHead>
-                <TableRow>
-                  <TableCell>Rank</TableCell>
-                  <TableCell>Validator</TableCell>
-                  <TableCell>Voting Power</TableCell>
-                  <TableCell>Cumulative Share</TableCell>
-                  <TableCell>Commission</TableCell>
-                  <TableCell>Uptime</TableCell>
+              <TableHead sx={{ background:theme.palette.primary.main,  }}>
+                <TableRow >
+                  <TableCell sx={{ color: theme.palette.white[900] }}>Rank</TableCell>
+                  <TableCell sx={{ color: theme.palette.white[900] }}>Validator</TableCell>
+                  <TableCell sx={{ color: theme.palette.white[900] }}>Voting Power</TableCell>
+                  <TableCell sx={{ color: theme.palette.white[900] }}>Cumulative Share</TableCell>
+                  <TableCell sx={{ color: theme.palette.white[900] }}>Commission</TableCell>
+                  <TableCell sx={{ color: theme.palette.white[900] }}>Uptime</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
