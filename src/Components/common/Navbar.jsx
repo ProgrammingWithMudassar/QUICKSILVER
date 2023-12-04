@@ -83,6 +83,7 @@ const Navbar = () => {
                     sx={{
                         height: '100vh',
                         width: showMenu ? {xs: "60%", md:"40%", lg:"20%"} : "0",
+                        boxShadow: `0 0 40px 6px #E6E6E6`,
                         position: "absolute",
                         top: '0px',
                         right: '0px',

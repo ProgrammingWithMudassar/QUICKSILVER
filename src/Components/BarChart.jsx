@@ -4,7 +4,7 @@ import { ResponsiveBar } from '@nivo/bar'
 
 const BarChart = ({data}) => {
   return (
-    <div style={{ height:"200px", width:"120%" }}>
+    <div style={{ height:"200px"}}>
        <ResponsiveBar
         data={data}
         keys={[
@@ -16,7 +16,7 @@ const BarChart = ({data}) => {
             'donut'
         ]}
         indexBy="country"
-        margin={{ top: 20, right: 130, bottom: 50, left: 30 }}
+        margin={{ top: 20, bottom: 50, left: 30 }}
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}

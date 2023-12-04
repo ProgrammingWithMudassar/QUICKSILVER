@@ -27,11 +27,11 @@ const AnalysisCard = () => {
             boxShadow: `0 0 10px 6px ${theme.palette.ShadowColor.main}`,
             borderRadius: "10px",
             margin: "10px 0",
-            padding: "20px 10px 10px 10px",
-            height: '240px'
+            padding: {xs:"20px 10px 50px 10px", md:"20px 10px 10px 10px"},
+            height: { xs: "auto", md: '240px' }
         }}>
             <Grid container spacing={3}>
-                <Grid item xs={5}>
+                <Grid item xs={10.7} md={5}>
                     <Box sx={{ display: "flex", alignItems: "center", justifyContent: 'space-between', }}>
                         <Typography variant="h5" color="initial">Logo</Typography>
                         <Typography variant="h5" color="initial" sx={{ fontWeight: 600 }}>Not Trading Yet</Typography>
@@ -95,7 +95,7 @@ const AnalysisCard = () => {
                     </Tooltip>
 
                 </Grid>
-                <Grid item xs={6.5} sx={{ height: '200px' }}>
+                <Grid item xs={12} md={6.5} sx={{ width: '100%', height: '200px' }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box>
                             <Typography color="initial" sx={{ fontSize: '12px' }}>Analysis</Typography>
@@ -103,7 +103,9 @@ const AnalysisCard = () => {
                         </Box>
                         <Button sx={{ color: "#fff", borderRadius: "30px", fontSize: "10px", padding: '0 20px' }}>See More</Button>
                     </Box>
-                    <BarChart data={Bar} />
+                    <Box sx={{width:{xs:"100%", md:"auto"}}}>
+                        <BarChart data={Bar} />
+                    </Box>
                 </Grid>
             </Grid>
 
