@@ -1,0 +1,24 @@
+.navbar_input {
+  background: url('../Assets/png/search.png') no-repeat;
+  background-size: 25px;
+  background-position: 10px 7px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  width: 400px;
+  padding: 10px 40px 10px 40px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.navbar_input_Mobile {
+  background: url('../Assets/png/search.png') no-repeat;
+  background-size: 25px;
+  background-position: 10px 7px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  width: 400px;
+  padding: 10px 40px 10px 40px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  width: 90%;
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "country": "05:00",
+    "hot dog":  10,
+    "hot dogColor": "#6290FF"
+  },
+  {
+    "country": "AE",
+    "hot dog":  60,
+    "hot dogColor": "#6290FF"
+  },
+  {
+    "country": "AF",
+    "hot dog":  100,
+    "hot dogColor": "#6290FF"
+  },
+  {
+    "country": "AG",
+    "hot dog":  50,
+    "hot dogColor": "#6290FF"
+  },
+  {
+    "country": "AI",
+    "hot dog":  55,
+    "hot dogColor": "#6290FF"
+  },
+  {
+    "country": "AL",
+    "hot dog": 80,
+    "hot dogColor": "#6290FF"
+  },
+  {
+    "country": "AM",
+    "hot dog":  60,
+    "hot dogColor": "#6290FF"
+  }
+]

@@ -1,0 +1,12 @@
+[
+    {
+      "id": "Supply",
+      "label": "Supply",
+      "value": 33
+    },
+    {
+      "id": "Bonded",
+      "label": "Bonded",
+      "value": 67
+    }
+  ]
