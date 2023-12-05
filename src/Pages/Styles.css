@@ -1,0 +1,25 @@
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-header,
+  .table-row {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+  }
+  
+  .table-row {
+    background-color: #f9f9f9;
+  }
+  
+  .table-row:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .table-row div {
+    flex: 1;
+    text-align: center;
+  }

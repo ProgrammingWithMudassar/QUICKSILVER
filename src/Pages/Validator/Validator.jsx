@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Button, Table, TableContainer, TableHead, TableRow, TableCell, Paper, TableBody } from '@mui/material'
+import { Box, Typography, Button, Select, MenuItem } from '@mui/material'
 import { useTheme } from '@emotion/react'
 
 
@@ -30,6 +30,11 @@ const validators = [
 const Validator = () => {
   const theme = useTheme();
   const [isActive, setIsActive] = useState(0);
+  const [selectedFilter, setSelectedFilter] = useState('All');
+
+  const handleFilterChange = (event) => {
+    setSelectedFilter(event.target.value);
+  };
 
   return (
     <Box>
@@ -44,28 +49,17 @@ const Validator = () => {
         height: { xs: "calc(100vh - 300px)", md: 'calc(100vh - 152px)' }
       }}>
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Box sx={{ p: 1, background: theme.palette.gray[400], borderRadius: '8px', display: "inline-block", width: "auto" }}>
-            <Button
-              sx={{
-                color: isActive === 0 ? '#fff' : theme.palette.text.primary,
-                background: isActive === 0 ? theme.palette.gray[500] : "none",
-                boxShadow: 'none',
-              }}
-              onClick={() => setIsActive(0)}
+          <Box sx={{ p: 1, background: theme.palette.gray[400], borderRadius: '8px', display: "inline-block", width: "auto", display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+            <Typography variant="h6" color="initial">Category</Typography>
+            <Select
+              value={selectedFilter}
+              onChange={handleFilterChange}
+              sx={{ color: theme.palette.text.primary,height:'40px', width:'130px',ml:'30px'}}
             >
-              Active
-            </Button>
-            <Button
-              sx={{
-                color: isActive === 1 ? '#fff' : theme.palette.text.primary,
-                background: isActive === 1 ? theme.palette.gray[500] : "none",
-                boxShadow: 'none',
-                ml: 1,
-              }}
-              onClick={() => setIsActive(1)}
-            >
-              Inactive
-            </Button>
+              <MenuItem value="All" sx={{ m:1,borderRadius:1, }}>All</MenuItem>
+              <MenuItem value="Active" sx={{ m:1,borderRadius:1, }}>Active</MenuItem>
+              <MenuItem value="Inactive" sx={{ m:1,borderRadius:1, }}>Inactive</MenuItem>
+            </Select>
           </Box>
 
           <Box sx={{ display: { xs: "none", lg: "flex" }, marginRight: { xs: '-30px', lg: '0px' }, position: 'relative' }}>
@@ -74,33 +68,42 @@ const Validator = () => {
           </Box>
         </Box>
 
-        <Box sx={{ mt: 3, height:"calc(100vh - 260px)" ,px:1, overflowY:'scroll' }}>
-          <TableContainer component={Paper}>
-            <Table >
-              <TableHead sx={{ background:theme.palette.primary.main,  }}>
-                <TableRow >
-                  <TableCell sx={{ color: theme.palette.white[900] }}>Rank</TableCell>
-                  <TableCell sx={{ color: theme.palette.white[900] }}>Validator</TableCell>
-                  <TableCell sx={{ color: theme.palette.white[900] }}>Voting Power</TableCell>
-                  <TableCell sx={{ color: theme.palette.white[900] }}>Cumulative Share</TableCell>
-                  <TableCell sx={{ color: theme.palette.white[900] }}>Commission</TableCell>
-                  <TableCell sx={{ color: theme.palette.white[900] }}>Uptime</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {validators.map((validator, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{validator.rank}</TableCell>
-                    <TableCell>{validator.name}</TableCell>
-                    <TableCell>{validator.votingPower}</TableCell>
-                    <TableCell>{validator.cumulativeShare}</TableCell>
-                    <TableCell>{validator.commission}</TableCell>
-                    <TableCell>{validator.uptime}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+        <Box sx={{ mt: 3, height: "calc(100vh - 260px)", px: 1, }}>
+          <Box sx={{ display: 'flex', alignItems:'center', background: theme.palette.primary.main, px:1, borderRadius:'10px 10px 0 0'}}>
+            <Typography sx={{ width: '10%', py: 1, color:"#fff"}}>Rank</Typography>
+            <Typography sx={{ width: '20%', py: 1, color:"#fff"}}>Validator</Typography>
+            <Typography sx={{ width: '10%', py: 1, color:"#fff"}}>Voting Power</Typography>
+            <Typography sx={{ width: '30%', py: 1, color:"#fff"}}>Cumulative Share</Typography>
+            <Typography sx={{ width: '10%', py: 1, color:"#fff"}}>Commission</Typography>
+            <Typography sx={{ width: '10%', py: 1, color:"#fff"}}>Uptime</Typography>
+          </Box>
+          <Box sx={{ height: "calc(100vh - 290px)", p: 0.5, overflowY: 'scroll', boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.2)',}}>
+            {validators.map((validator, index) => (
+              <Box
+                className="table-row"
+                key={validator.rank}
+                sx={{
+                  display: 'flex',
+                  background: index % 2 === 0 ? '#f9f9f9' : '#fff',
+                  borderRadius: '8px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+                  transition: 'box-shadow 0.3s ease',
+                  "&:hover": {
+                    boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)',
+                  },
+                  margin: '5px 0',
+                }}
+              >
+                <Box sx={{ width: '10%', p: 1 }}>{validator.rank}</Box>
+                <Box sx={{ width: '20%', p: 1 }}>{validator.name}</Box>
+                <Box sx={{ width: '10%', p: 1 }}>{validator.votingPower}</Box>
+                <Box sx={{ width: '30.5%', p: 1 }}>{validator.cumulativeShare}</Box>
+                <Box sx={{ width: '10%', p: 1 }}>{validator.commission}</Box>
+                <Box sx={{ width: '10%', p: 1 }}>{validator.uptime}</Box>
+              </Box>
+            ))}
+          </Box>
+
         </Box>
       </Box>
     </Box>

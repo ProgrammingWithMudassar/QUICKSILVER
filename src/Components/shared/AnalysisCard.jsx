@@ -98,8 +98,7 @@ const AnalysisCard = () => {
                 <Grid item xs={12} md={6.5} sx={{ width: '100%', height: '200px' }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box>
-                            <Typography color="initial" sx={{ fontSize: '12px' }}>Analysis</Typography>
-                            <Typography color="initial" sx={{ fontSize: '12px', fontWeight: 600, display: 'flex', alignItems: 'center' }}>Last One Day<FaCaretDown /></Typography>
+                            <Typography color="initial" sx={{ fontSize: '16px' }}>Analysis</Typography>
                         </Box>
                         <Button sx={{ color: "#fff", borderRadius: "30px", fontSize: "10px", padding: '0 20px' }}>See More</Button>
                     </Box>
