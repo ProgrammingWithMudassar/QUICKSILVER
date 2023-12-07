@@ -14,7 +14,7 @@ const Inflation = () => {
             boxShadow: `0 0 10px 6px ${theme.palette.ShadowColor.main}`,
             borderRadius: "10px",
             padding: "20px 10px 10px 10px",
-            height: '114px'
+            height: '130px'
         }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box sx={{ width: '50%', borderRadius: "8px", p: 1, height: 'auto', }}>

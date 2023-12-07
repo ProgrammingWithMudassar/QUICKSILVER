@@ -22,13 +22,13 @@ const TokenomicsCard = () => {
             padding: "20px 10px 10px 10px",
             height: '240px'
         }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
                 <Grid item xs={12}>
                     <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box>
                             <Typography color="initial" sx={{ fontSize: '16px' }}>Tokenomics</Typography>
                         </Box>
-                        <Button sx={{ color: "#fff", borderRadius: "30px", fontSize: "10px", padding: '0 20px' }}>See More</Button>
+                        <Button sx={{ color: "#fff", borderRadius: "30px", fontSize: "10px", padding: '0 20px' }}>View More</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={4} sx={{  display: 'flex', flexDirection:'column', gap:2,}}>

@@ -7,6 +7,7 @@ import BarChart from '../BarChart.jsx'
 import Bar from '../../Data/ChartsData/BarChartData.json'
 import { FaCaretDown } from "react-icons/fa";
 import { useTheme } from '@emotion/react'
+import Logo from '../../Assets/png/Logo.png'
 
 const AnalysisCard = () => {
     const theme = useTheme();
@@ -33,10 +34,17 @@ const AnalysisCard = () => {
             <Grid container spacing={3}>
                 <Grid item xs={10.7} md={5}>
                     <Box sx={{ display: "flex", alignItems: "center", justifyContent: 'space-between', }}>
-                        <Typography variant="h5" color="initial">Logo</Typography>
+                        <Typography variant="h5" color="initial">
+                            <img src={Logo} alt="" style={{ width:"140px" }}/>
+                        </Typography>
                         <Typography variant="h5" color="initial" sx={{ fontWeight: 600 }}>Not Trading Yet</Typography>
                     </Box>
-                    <Box sx={{
+                    <Box sx={{ mt:1 }}>
+                        <Typography variant="body1" color="initial">
+                        decentralized application, or DApp, is a type of software application that runs on a decentralized network of computers rather than being hosted on a central server. DApps use blockchain technology.
+                        </Typography>
+                    </Box>
+                    {/* <Box sx={{
                         width: '100%',
                         borderRadius: '8px',
                         backgroundColor: theme.palette.gray[400],
@@ -58,7 +66,7 @@ const AnalysisCard = () => {
                             <Typography variant="body2" color="initial">Total Supply </Typography>
                             <Typography variant="body2" color="initial" sx={{ display: 'flex', alignItems: 'center' }}>-- %<HiTrendingUp color='#17b73a' /></Typography>
                         </Box>
-                    </Box>
+                    </Box> */}
                 </Grid>
 
                 <Grid item xs={0.5} sx={{
@@ -98,12 +106,13 @@ const AnalysisCard = () => {
                 <Grid item xs={12} md={6.5} sx={{ width: '100%', height: '200px' }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box>
-                            <Typography color="initial" sx={{ fontSize: '16px' }}>Analysis</Typography>
+                            <Typography color="initial" sx={{ fontSize: '16px' }}>Pricing</Typography>
                         </Box>
-                        <Button sx={{ color: "#fff", borderRadius: "30px", fontSize: "10px", padding: '0 20px' }}>See More</Button>
+                        <Button sx={{ color: "#fff", borderRadius: "30px", fontSize: "10px", padding: '0 20px' }}>View More</Button>
                     </Box>
-                    <Box sx={{width:{xs:"100%", md:"auto"}}}>
-                        <BarChart data={Bar} />
+                    <Box sx={{width:{xs:"100%", md:"auto"}, display:'flex', justifyContent:'center', alignItems:'center'}}>
+                        {/* <BarChart data={Bar} /> */}
+                        <Typography variant="h6" color="initial" mt={5}>No Trading Yet</Typography>
                     </Box>
                 </Grid>
             </Grid>

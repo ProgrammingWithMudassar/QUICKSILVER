@@ -8,6 +8,7 @@ import { RxCross2 } from "react-icons/rx";
 import { SlideBarData } from "../../Data/SideBar.js";
 import { Link } from 'react-router-dom'
 import '../Styles.css'
+import Logo from '../../Assets/png/Logo.png'
 
 
 
@@ -47,7 +48,10 @@ const Navbar = () => {
                     display: 'flex', alignItems: 'center',
                     justifyContent: 'space-between', padding: { xs: "0 10px", lg: "0 30px" },
                 }}>
-                <Typography variant="h6" sx={{ color: "#fff", fontWeight: 600 }}>Logo</Typography>
+                <Typography variant="h6" sx={{ color: "#fff", fontWeight: 600 }}>
+                    {/* <img src={Logo} alt="" style={{ width:"60px" }}/> */}
+                    Logo
+                </Typography>
                 <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: "30px" }}>
                     <Box>
                         <Button sx={{ color: '#fff', display: 'flex', alignItems: 'center', gap: { xs: "10px", md: "20px", lg: "30px" }, height: '38px', borderRadius: '8px', padding: { xs: "0 4px", md: "0 10px", lg: "0 20px" }, mr: { xs: "-40px", lg: "0" } }} onClick={handleOpen}>QuickSilver<HiOutlineRefresh color="#fff" /></Button>
@@ -82,7 +86,7 @@ const Navbar = () => {
                 <Box
                     sx={{
                         height: '100vh',
-                        width: showMenu ? {xs: "60%", md:"40%", lg:"20%"} : "0",
+                        width: showMenu ? { xs: "60%", md: "40%", lg: "20%" } : "0",
                         boxShadow: `0 0 40px 6px #E6E6E6`,
                         position: "absolute",
                         top: '0px',
@@ -101,27 +105,27 @@ const Navbar = () => {
                         <input type="text" className="navbar_input_Mobile" placeholder="Find here..." />
                         <Button sx={{ color: '#fff', borderRadius: '8px', width: '90%', py: 2.3, mt: 1 }}>Search</Button>
                     </Box>
-                    <Box sx={{ width: "100%",marginTop:"30px" }}>
-                        <Box sx={{ width:"90%",m:'auto',  }}>
+                    <Box sx={{ width: "100%", marginTop: "30px" }}>
+                        <Box sx={{ width: "90%", m: 'auto', }}>
                             {SlideBarData.map((item) => (
                                 <Link to={`${item.route}`} key={item.key}>
                                     <Box
                                         sx={{
                                             width: "100%",
-                                            borderRadius: "10px", display: 'flex', alignItems:'center', gap:1,
-                                            mt:2, padding:"6px 10px 5px 10px",
-                                            border:"1px solid black",
-                                            color:"#000",
+                                            borderRadius: "10px", display: 'flex', alignItems: 'center', gap: 1,
+                                            mt: 2, padding: "6px 10px 5px 10px",
+                                            border: "1px solid black",
+                                            color: "#000",
                                             '&:hover': {
                                                 boxShadow: `0 0 6px 2px ${theme.palette.ShadowColor.main}`,
                                                 backgroundColor: theme.palette.primary.main,
                                                 cursor: 'pointer',
                                                 transform: 'scale(1.05)',
-                                                color:"#fff",
+                                                color: "#fff",
                                             },
                                         }}
                                     >
-                                        {item.icon && <item.icon size={26}  />}
+                                        {item.icon && <item.icon size={26} />}
                                         <Typography variant="h6">{item.text}</Typography>
                                     </Box>
                                 </Link>

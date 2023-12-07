@@ -7,6 +7,7 @@ import APRCard from '../../Views/OverView/APRCard'
 import InflationCard from '../../Views/OverView/Inflation'
 import ValidatorsData from '../../Data/ChartsData/ValidatorsData.json'
 import VotingData from '../../Data/ChartsData/VotingData.json'
+import Banner from '../../Views/OverView/Banner'
 
 
 
@@ -19,7 +20,7 @@ const Overview = () => {
       <Grid container spacing={3} sx={{ mt: "-20px" }}>
         <Grid item xs={12} lg={8}>
           <AnalysisCard title={"APR"} />
-          <Grid container spacing={2} sx={{ mt: 1 }}>
+          <Grid container spacing={1} sx={{ mt: 1 }}>
             <Grid item xs={12} md={6}><ProgressCard title="Online Voting Power" percentage="100" desc="78.60m from 78.60m" progress={100} dataa={VotingData}/></Grid>
             <Grid item xs={12} md={6}><ProgressCard title="Validators" percentage="40" desc="125 out of 224" progress={40} dataa={ValidatorsData}/></Grid>
             <Grid item xs={12} md={6}><ProgressCard title="Supply" percentage="50" desc="234.78M QCK" progress={50} dataa={VotingData}/></Grid>
@@ -34,8 +35,10 @@ const Overview = () => {
             <Grid item xs={6}><InflationCard /></Grid>
           </Grid>
         </Grid>
+        <Grid item xs={12} mt={-2}>
+          <Banner />
+        </Grid>
       </Grid>
-
     </Box>
   )
 }

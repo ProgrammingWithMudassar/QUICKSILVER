@@ -14,15 +14,15 @@ const progressCard = ({ title, desc, dataa }) => {
             borderRadius: "10px",
             margin: "0",
             padding: "5px 10px",
-            height: '110px'
+            height: '130px',
         }}>
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
-                    <Typography color="initial" sx={{ fontSize: '16px', mt:2}}>{title}</Typography>
-                    <Typography variant="h6" fontWeight={700}>{desc}</Typography>
+            <Grid container spacing={2} sx={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+                <Grid item xs={7}>
+                    <Typography color="initial" sx={{ fontSize: '20px', mt:"-25px"}}>{title}</Typography>
+                    <Typography variant="h5" fontWeight={700}>{desc}</Typography>
                 </Grid>
-                <Grid item xs={6}>
-                    <MyResponsiveRadialBar data={dataa} h={"140px"}/>
+                <Grid item xs={5}>
+                    <MyResponsiveRadialBar data={dataa} h={"155px"}/>
                 </Grid>
             </Grid>
         </Box>
