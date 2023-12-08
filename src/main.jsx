@@ -7,11 +7,18 @@ import theme from "./Theme/theme.js";
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit'
 import counterSlice from './Features/Counter/CounterSlice.js'
+import { API } from "./Features/API/API";
 
 
 const store = configureStore({
-  reducer: { counter: counterSlice }
-});
+  reducer: {
+    counter: counterSlice,
+    [API.reducerPath]: API.reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(API.middleware),
+}
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -26,3 +33,4 @@ root.render(
     </ThemeProvider>
   </React.StrictMode>
 );
+
